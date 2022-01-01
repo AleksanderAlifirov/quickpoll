@@ -1,11 +1,13 @@
 package ru.cft.quickpoll.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="qp_votes")
+@Builder
 @Data
 public class Vote {
 

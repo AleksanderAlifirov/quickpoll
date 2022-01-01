@@ -6,3 +6,4 @@
  classes
  proxy.properties
 /.idea/
+/target/
