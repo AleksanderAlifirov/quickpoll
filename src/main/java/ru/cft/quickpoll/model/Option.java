@@ -1,7 +1,9 @@
 package ru.cft.quickpoll.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,10 +11,12 @@ import javax.persistence.*;
 @Table(name="qp_options")
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Option {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
