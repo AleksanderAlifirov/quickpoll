@@ -20,7 +20,7 @@ public class Option {
     @Column(name="id")
     private Long id;
 
-    @Column(name="option_value")
+    @Column(name="value")
     private String value;
 
     @Column(name="poll_id")
