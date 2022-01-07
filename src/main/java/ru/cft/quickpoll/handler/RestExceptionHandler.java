@@ -1,5 +1,7 @@
 package ru.cft.quickpoll.handler;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,9 @@ import java.util.List;
 
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+
+    @Autowired
+    private MessageSource messageSource;
 
     @ExceptionHandler(value = ResourceNotFoundException.class)
     public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException rnfe, HttpServletRequest request){
@@ -52,7 +57,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
             }
             ValidationError validationError = new ValidationError();
             validationError.setCode(fe.getCode());
-            validationError.setMessage(fe.getDefaultMessage());
+            validationError.setMessage(messageSource.getMessage(fe, null));
             validationErrorList.add(validationError);
         }
 
