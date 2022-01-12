@@ -17,11 +17,14 @@ public class SwaggerConfiguration {
 
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .paths(PathSelectors.regex("/polls/*.*|/votes/*.*|/computeresult/*.*"))
                 .build()
                 .apiInfo(apiInfo());
+        docket.useDefaultResponseMessages(false);
+
+        return docket;
     }
 
     private ApiInfo apiInfo() {
