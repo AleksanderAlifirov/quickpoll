@@ -1,16 +1,14 @@
-package ru.cft.quickpoll.controller;
+package ru.cft.quickpoll.v1.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.message.StringFormattedMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.cft.quickpoll.error.ErrorDetail;
@@ -22,7 +20,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-@RestController
+@RestController("pollControllerV1")
+@RequestMapping("/v1")
 @Slf4j
 @Api(value = "polls", description = "Poll API")
 public class PollController {

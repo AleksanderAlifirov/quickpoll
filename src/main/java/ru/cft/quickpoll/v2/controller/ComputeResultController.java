@@ -1,4 +1,4 @@
-package ru.cft.quickpoll.v1.controller;
+package ru.cft.quickpoll.v2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +15,8 @@ import ru.cft.quickpoll.repository.VoteRepository;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController("computeResultControllerV1")
-@RequestMapping("/v1")
+@RestController("computeResultControllerV2")
+@RequestMapping("/v2")
 public class ComputeResultController {
 
     @Autowired

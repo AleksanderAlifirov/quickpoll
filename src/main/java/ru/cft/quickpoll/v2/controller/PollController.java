@@ -1,4 +1,4 @@
-package ru.cft.quickpoll.v1.controller;
+package ru.cft.quickpoll.v2.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,8 +20,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-@RestController("pollControllerV1")
-@RequestMapping("/v1")
+@RestController("pollControllerV2")
+@RequestMapping("/v2")
 @Slf4j
 @Api(value = "polls", description = "Poll API")
 public class PollController {
