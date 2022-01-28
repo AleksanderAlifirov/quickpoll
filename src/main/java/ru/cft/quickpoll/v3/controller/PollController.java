@@ -1,4 +1,4 @@
-package ru.cft.quickpoll.v2.controller;
+package ru.cft.quickpoll.v3.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.cft.quickpoll.error.ErrorDetail;
@@ -22,8 +23,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-@RestController("pollControllerV2")
-@RequestMapping("/v2")
+@RestController("pollControllerV3")
+@RequestMapping("/v3")
 @Slf4j
 @Api(value = "polls", description = "Poll API")
 public class PollController {
@@ -71,6 +72,7 @@ public class PollController {
     }
 
     @DeleteMapping("/polls/{pollId}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<?> deletePoll(@PathVariable Long pollId){
         verifyPoll(pollId);
         pollRepository.deleteById(pollId);

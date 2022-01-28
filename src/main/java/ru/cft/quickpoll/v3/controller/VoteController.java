@@ -1,4 +1,4 @@
-package ru.cft.quickpoll.v2.controller;
+package ru.cft.quickpoll.v3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -9,8 +9,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.cft.quickpoll.model.Vote;
 import ru.cft.quickpoll.repository.VoteRepository;
 
-@RestController("voteControllerV2")
-@RequestMapping("/v2")
+@RestController("voteControllerV3")
+@RequestMapping("/v3")
 public class VoteController {
 
     @Autowired
